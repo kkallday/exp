@@ -30,6 +30,9 @@ type Conn interface {
 	// SetValue sets the value of the pin. 0 for low values, 1 for high.
 	SetValue(pin string, v int) error
 
+	// GetValue gets the value of the pin. 0 for low values, 1 for high.
+	GetValue(pin string) (int, error)
+
 	// SetDirection sets the direction of the pin.
 	SetDirection(pin string, dir Direction) error
 

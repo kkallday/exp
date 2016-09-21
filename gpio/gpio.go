@@ -51,6 +51,11 @@ func (d *Device) SetValue(pin string, v int) error {
 	return d.conn.SetValue(pin, v)
 }
 
+// GetValue gets the value of the pin. 0 for low, 1 for high values.
+func (d *Device) GetValue(pin string) (int, error) {
+	return d.conn.GetValue(pin)
+}
+
 // SetDirection configures the direction of the pin.
 func (d *Device) SetDirection(pin string, dir Direction) error {
 	return d.conn.SetDirection(pin, driver.Direction(dir))
