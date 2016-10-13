@@ -56,6 +56,11 @@ func (d *Device) GetValue(pin string) (int, error) {
 	return d.conn.GetValue(pin)
 }
 
+// SetPWMValue sets the value of the pin. Value must be in range 0-255.
+func (d *Device) SetPWMValue(pin string, v int) error {
+	return d.conn.SetPWMValue(pin, v)
+}
+
 // SetDirection configures the direction of the pin.
 func (d *Device) SetDirection(pin string, dir Direction) error {
 	return d.conn.SetDirection(pin, driver.Direction(dir))

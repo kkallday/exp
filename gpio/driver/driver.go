@@ -33,6 +33,9 @@ type Conn interface {
 	// GetValue gets the value of the pin. 0 for low values, 1 for high.
 	GetValue(pin string) (int, error)
 
+	// SetPWMValue sets the value of the pin. Value must be in the range 0-255.
+	SetPWMValue(pin string, v int) error
+
 	// SetDirection sets the direction of the pin.
 	SetDirection(pin string, dir Direction) error
 
